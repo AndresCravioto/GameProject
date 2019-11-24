@@ -13,6 +13,21 @@ Player.allInstances = [];
 let p1 = new Player(6, 6, '#75A4FF');
 let p2 = new Player(7,9, 'red');
 
+document.addEventListener('keyup', (event) => {
+	console.log(event);
+	p1Keys = [37,38,39,40];
+	p2Keys = [65,68,87,83];
+	
+	if (p1Keys.includes(event.keyCode)) {
+		p1.deleteKey();
+	}
+  
+	if (p2Keys.includes(event.keyCode)) {
+		p2.deleteKey();
+	}
+
+});
+
 document.addEventListener('keydown', (event) => {
 
 	p1Keys = [37,38,39,40];
@@ -27,6 +42,7 @@ document.addEventListener('keydown', (event) => {
 	}
 
 });
+
 
 function drawBoard() {
 	for(var y = 0; y < mapHeight; ++y)
@@ -73,8 +89,6 @@ function drawPlayers(players) {
 			context.strokeStyle = 'black';
 			context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
 	
-		
-	console.log(player.color + player.key + player.xCoord);
 		};
 	
 	  });
@@ -83,10 +97,10 @@ function drawPlayers(players) {
 	
 	  
 function draw() {
-	drawBoard();
 	drawPlayers();
 }
 
+drawBoard()
 drawStartingPositions(Player.allInstances);
-let game = setInterval(draw, 300);
+let game = setInterval(draw, 50);
 

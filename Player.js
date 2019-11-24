@@ -31,4 +31,8 @@ class Player {
     };
   }
 
+  deleteKey() {
+    this.key='';
+  }
+
 };
