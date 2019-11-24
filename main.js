@@ -12,9 +12,20 @@ Player.allInstances = [];
 
 let p1 = new Player(6, 6, '#75A4FF');
 let p2 = new Player(7,9, 'red');
-console.log(p1.upKey)
+
 document.addEventListener('keydown', (event) => {
-	p1.setKey(event)
+
+	p1Keys = [37,38,39,40];
+	p2Keys = [65,68,87,83];
+	
+	if (p1Keys.includes(event.keyCode)) {
+		p1.setKey(event, 37, 38, 39, 40);
+	}
+  
+	if (p2Keys.includes(event.keyCode)) {
+		p2.setKey(event, 65, 87, 68, 83);
+	}
+
 });
 
 function drawBoard() {
@@ -44,12 +55,38 @@ function drawStartingPositions(players) {
 		context.strokeRect(p.xCoord * tileWidth, p.yCoord * tileHeight, tileWidth, tileHeight);
 	});
 };
+
+function drawPlayers(players) {
+
+	Player.allInstances.forEach(function (player) {
+		if (player.key) {
+	
+			if (!player.dead) {
+				if (player.key === "LEFT") player.xCoord -= 1;
+				if (player.key === "UP") player.yCoord -= 1;
+				if (player.key === "RIGHT") player.xCoord += 1;
+				if (player.key === "DOWN") player.yCoord += 1;
+		  };
+
+			context.fillStyle = player.color;
+			context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+			context.strokeStyle = 'black';
+			context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+	
+		
+	console.log(player.color + player.key + player.xCoord);
+		};
+	
+	  });
+
+}
 	
 	  
 function draw() {
 	drawBoard();
-	drawStartingPositions(Player.allInstances);
+	drawPlayers();
 }
 
+drawStartingPositions(Player.allInstances);
+let game = setInterval(draw, 300);
 
-let game = setInterval(draw, 100);
