@@ -90,6 +90,7 @@ function drawPlayers() {
 function draw() {
 	drawBoard();
 	drawPlayers();
+	console.log(p1);
 }
 
 drawStartingPositions(Player.allInstances);

@@ -8,6 +8,7 @@ class Player {
     this.yCoord = yCoord;
     this.startX = xCoord;
     this.startY = yCoord;
+    this.attack = new Attack();
 
     Player.allInstances.push(this);
   };
