@@ -356,7 +356,7 @@ class Player {
                         }
                     break;
                     case 'LEFT':
-                        if(this.xCoord > 8) {
+                        if(this.xCoord >= 8) {
                             gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord -4)] = 10;
                             gameMap[(((this.yCoord) * mapWidth) + this.xCoord -4)] = 10;
                             gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord -4)] = 10;  

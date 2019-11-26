@@ -51,18 +51,25 @@ function drawBoard() {
 	{
 		for(var x = 0; x < mapWidth; ++x)
 		{
-			switch(gameMap[((y*mapWidth)+x)])
-			{
-				case 0:
-					context.fillStyle = "#685b48";
-					break;
-				case 10:
-					context.fillStyle = "#ffff00";
-					break;
-				default:
-					context.fillStyle = "#5aa457";
+			if (gameMap[((y*mapWidth)+x)] == 0) {
+				context.fillStyle = "#685b48";
+			} else if (gameMap[((y*mapWidth)+x)] == 2) {
+				context.fillStyle = "brown";
+			} else if (gameMap[((y*mapWidth)+x)] == 3) {
+				context.fillStyle = "black";;
+			} else if (gameMap[((y*mapWidth)+x)] > 9  && gameMap[((y*mapWidth)+x)] < 30) {
+				context.fillStyle = "#ffff00";
+				gameMap[((y*mapWidth)+x)] += 1;
+			} else if (gameMap[((y*mapWidth)+x)] >= 30 && gameMap[((y*mapWidth)+x)] < 50) {
+				context.fillStyle = "orange";
+				gameMap[((y*mapWidth)+x)] += 1;
+			} else if (gameMap[((y*mapWidth)+x)] == 50) {
+				context.fillStyle = "red";
+				gameMap[((y*mapWidth)+x)] -=47;
+			} else {
+				context.fillStyle = "#5aa457";
 			}
-
+			
 			context.fillRect( x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 		}
 	}
