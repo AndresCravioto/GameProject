@@ -85,6 +85,7 @@ function drawPlayers() {
 }
 	  
 function draw() {
+	drawBoard();
 	drawPlayers();
 }
 
