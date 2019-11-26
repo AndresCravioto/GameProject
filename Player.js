@@ -38,10 +38,10 @@ class Player {
   move() {
     
     if (this.key && !this.dead) {
-            if (this.key === "LEFT" ) this.xCoord -= 1;
-            if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth)+this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
-            if (this.key === "RIGHT") this.xCoord += 1;
-            if (this.key === "DOWN") this.yCoord += 1;
+            if (this.key === "LEFT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 0 && this.xCoord -1 > -1) this.xCoord -= 1;
+            if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
+            if (this.key === "RIGHT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 0 && this.xCoord +1 < mapWidth) this.xCoord += 1;
+            if (this.key === "DOWN" && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 0 && this.yCoord +1 < mapHeight) this.yCoord += 1;
     }
 
     this.key = 'USED'
