@@ -1,5 +1,5 @@
 class Weapon {
-    constructor(type = 'BEAM') {
+    constructor(type = 'PILAR OF FLAME') {
         this.type = type;
     };
 };
