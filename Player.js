@@ -12,21 +12,28 @@ class Player {
     Player.allInstances.push(this);
   };
 
-  setKey(event, left, up, right, down) {
+  setKey(event, left, up, right, down, attack) {
     switch (event.keyCode) {
-      case up:
-          this.key = 'UP';
+        case up:
+            this.key = 'UP';
+            this.direction = 'UP';
             break;
-      case right:
+        case right:
             this.key = 'RIGHT';
+            this.direction = 'RIGHT';
         break;
-      case down:
+        case down:
             this.key = 'DOWN';
+            this.direction = 'DOWN';
         break;
-      case left:
+        case left:
             this.key = 'LEFT';
+            this.direction = 'LEFT';
         break;
-      default:
+        case attack:
+            this.key = 'ATTACK';
+        break;
+        default:
         break;
     };
   }
@@ -35,15 +42,25 @@ class Player {
     this.key='';
   }
 
-  move() {
-    
-    if (this.key && !this.dead) {
-            if (this.key === "LEFT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 0 && this.xCoord -1 > -1) this.xCoord -= 1;
-            if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
-            if (this.key === "RIGHT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 0 && this.xCoord +1 < mapWidth) this.xCoord += 1;
-            if (this.key === "DOWN" && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 0 && this.yCoord +1 < mapHeight) this.yCoord += 1;
-    }
+  action() {
 
-    this.key = 'USED'
-  }
+    if(this.key != 'ATTACK' && this.key) {
+
+        if (!this.dead) {
+                if (this.key === "LEFT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 0 && this.xCoord -1 > -1) this.xCoord -= 1;
+                if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
+                if (this.key === "RIGHT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 0 && this.xCoord +1 < mapWidth) this.xCoord += 1;
+                if (this.key === "DOWN" && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 0 && this.yCoord +1 < mapHeight) this.yCoord += 1;
+            }
+
+        this.key = 'USED'
+        }
+
+    if(this.key === 'ATTACK') {
+        switch (this.direction) {
+            case 'UP':
+                gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] = 10;
+            }
+        }
+    }   
 };

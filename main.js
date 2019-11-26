@@ -30,17 +30,17 @@ document.addEventListener('keyup', (event) => {
 
 document.addEventListener('keydown', (event) => {
 
-	p1Keys = [37,38,39,40];
+	p1Keys = [37,38,39,40,18];
 	p2Keys = [65,68,87,83];
 	
 	if (p1Keys.includes(event.keyCode) && p1.key != 'USED') {
-		p1.setKey(event, 37, 38, 39, 40);
-		p1.move();
+		p1.setKey(event, 37, 38, 39, 40, 18);
+		p1.action();
 	}
   
 	if (p2Keys.includes(event.keyCode) && p2.key != 'USED') {
 		p2.setKey(event, 65, 87, 68, 83);
-		p2.move();
+		p2.action();
 	}
 
 });
@@ -55,6 +55,9 @@ function drawBoard() {
 			{
 				case 0:
 					context.fillStyle = "#685b48";
+					break;
+				case 10:
+					context.fillStyle = "#ffff00";
 					break;
 				default:
 					context.fillStyle = "#5aa457";
@@ -89,7 +92,6 @@ function draw() {
 	drawPlayers();
 }
 
-drawBoard()
 drawStartingPositions(Player.allInstances);
 let game = setInterval(draw, 50);
 
