@@ -17,7 +17,7 @@ class Board {
         this.shape = shape;
     };
 
-    drawMap() {
+    setMap() {
         gameMap = this.shape;
     }
 

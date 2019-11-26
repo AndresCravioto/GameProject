@@ -3,14 +3,14 @@ const context = canvas.getContext('2d');
 const tileWidth = 60;
 const tileHeight = 60;
 const mapWidth = 20;
-const mapHeight = 14;
+const mapHeight = 13;
 
 let gameMap = new Board();
-gameMap.drawMap();
+gameMap.setMap();
 
 Player.allInstances = [];
 
-let p1 = new Player(6, 6, '#75A4FF');
+let p1 = new Player(0, 1, '#75A4FF');
 let p2 = new Player(7,9, 'red');
 
 document.addEventListener('keyup', (event) => {
