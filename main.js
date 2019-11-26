@@ -13,6 +13,8 @@ Player.allInstances = [];
 let p1 = new Player(0, 1, '#75A4FF');
 let p2 = new Player(7,9, 'red');
 
+playercount = Player.allInstances.length;
+
 document.addEventListener('keyup', (event) => {
 	
 	p1Keys = [37,38,39,40];
@@ -91,6 +93,14 @@ function drawPlayers() {
 			context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
 			context.strokeStyle = 'black';
 			context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+
+			if (gameMap[((player.yCoord*mapWidth)+player.xCoord)] == 50) {
+				player.changeHp(-1);
+			}
+			
+			if(player.hp <= 0 && player.dead == false) {
+				player.die();
+			}
 	});
 }
 	  

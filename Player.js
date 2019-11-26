@@ -2,6 +2,7 @@ class Player {
     constructor(xCoord, yCoord, color) {
         this.color = color || '#fff';
         this.dead = false;
+        this.hp = 2;
         this.direction = '';
         this.key = '';
         this.xCoord = xCoord;
@@ -549,5 +550,16 @@ class Player {
     
     setAttack(attack) {
         this.weapon = weapon;
+    }
+
+    changeHp(value) {
+        this.hp = this.hp + value;
+    }
+
+    die() {
+        this.dead = true;
+        this.xCoord = -10000;
+        this.yCoord = -10000;
+        Player.allInstances;
     }
 };
