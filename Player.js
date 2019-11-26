@@ -35,4 +35,15 @@ class Player {
     this.key='';
   }
 
+  move() {
+
+    if (this.key && !this.dead) {
+            if (this.key === "LEFT") this.xCoord -= 1;
+            if (this.key === "UP") this.yCoord -= 1;
+            if (this.key === "RIGHT") this.xCoord += 1;
+            if (this.key === "DOWN") this.yCoord += 1;
+    }
+
+    this.key = 'USED'
+  }
 };

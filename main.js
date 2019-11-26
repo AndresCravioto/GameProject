@@ -14,7 +14,7 @@ let p1 = new Player(6, 6, '#75A4FF');
 let p2 = new Player(7,9, 'red');
 
 document.addEventListener('keyup', (event) => {
-	console.log(event);
+	
 	p1Keys = [37,38,39,40];
 	p2Keys = [65,68,87,83];
 	
@@ -33,12 +33,14 @@ document.addEventListener('keydown', (event) => {
 	p1Keys = [37,38,39,40];
 	p2Keys = [65,68,87,83];
 	
-	if (p1Keys.includes(event.keyCode)) {
+	if (p1Keys.includes(event.keyCode) && p1.key != 'USED') {
 		p1.setKey(event, 37, 38, 39, 40);
+		p1.move();
 	}
   
-	if (p2Keys.includes(event.keyCode)) {
+	if (p2Keys.includes(event.keyCode) && p2.key != 'USED') {
 		p2.setKey(event, 65, 87, 68, 83);
+		p2.move();
 	}
 
 });
@@ -72,29 +74,15 @@ function drawStartingPositions(players) {
 	});
 };
 
-function drawPlayers(players) {
 
+function drawPlayers() {
 	Player.allInstances.forEach(function (player) {
-		if (player.key) {
-	
-			if (!player.dead) {
-				if (player.key === "LEFT") player.xCoord -= 1;
-				if (player.key === "UP") player.yCoord -= 1;
-				if (player.key === "RIGHT") player.xCoord += 1;
-				if (player.key === "DOWN") player.yCoord += 1;
-		  };
-
 			context.fillStyle = player.color;
 			context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
 			context.strokeStyle = 'black';
 			context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
-	
-		};
-	
-	  });
-
+	});
 }
-	
 	  
 function draw() {
 	drawPlayers();
