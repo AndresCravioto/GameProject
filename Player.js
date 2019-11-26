@@ -60,6 +60,30 @@ class Player {
         switch (this.direction) {
             case 'UP':
                 gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] = 10;
+                gameMap[(((this.yCoord -2) * mapWidth) + this.xCoord)] = 10;
+            break;
+            case 'DOWN':
+                gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] = 10;
+                gameMap[(((this.yCoord +2) * mapWidth) + this.xCoord)] = 10;
+            break;
+            case 'LEFT':
+                if(this.xCoord > 1) {
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1)] = 10;
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord -2)] = 10;
+                } else if (this.xCoord == 1) {
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1)] = 10;
+                } else {
+                }
+            break;
+            case 'RIGHT':
+                if(this.xCoord == mapWidth -1) {
+                } else if (this.xCoord == mapWidth -2) {
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1)] = 10;
+                } else {
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1)] = 10;
+                    gameMap[(((this.yCoord) * mapWidth) + this.xCoord +2)] = 10;
+                }
+            break;
             }
         }
     }   

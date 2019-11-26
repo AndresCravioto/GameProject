@@ -31,7 +31,7 @@ document.addEventListener('keyup', (event) => {
 document.addEventListener('keydown', (event) => {
 
 	p1Keys = [37,38,39,40,18];
-	p2Keys = [65,68,87,83];
+	p2Keys = [65,68,87,83, 69];
 	
 	if (p1Keys.includes(event.keyCode) && p1.key != 'USED') {
 		p1.setKey(event, 37, 38, 39, 40, 18);
@@ -39,7 +39,7 @@ document.addEventListener('keydown', (event) => {
 	}
   
 	if (p2Keys.includes(event.keyCode) && p2.key != 'USED') {
-		p2.setKey(event, 65, 87, 68, 83);
+		p2.setKey(event, 65, 87, 68, 83, 69);
 		p2.action();
 	}
 
