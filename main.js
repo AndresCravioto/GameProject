@@ -1,18 +1,22 @@
 const canvas = document.getElementById('tron');
 const context = canvas.getContext('2d');
-const tileWidth = 60;
-const tileHeight = 60;
+const tileWidth = 72;
+const tileHeight = 72;
 const mapWidth = 20;
-const mapHeight = 13;
+const mapHeight = 12;
+
 
 let gameMap = new Board();
 gameMap.setMap();
+
 
 Player.allInstances = [];
 
 let p1 = new Player(0, 1, '#75A4FF');
 let p2 = new Player(7,9, 'red');
 
+let image = new Image();
+let array = new Array();
 playercount = Player.allInstances.length;
 
 document.addEventListener('keyup', (event) => {
@@ -97,7 +101,7 @@ function drawPlayers() {
 			if (gameMap[((player.yCoord*mapWidth)+player.xCoord)] == 50) {
 				player.changeHp(-1);
 			}
-			
+
 			if(player.hp <= 0 && player.dead == false) {
 				player.die();
 			}
