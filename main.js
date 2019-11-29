@@ -4,8 +4,21 @@ const tileWidth = 72;
 const tileHeight = 72;
 const mapWidth = 20;
 const mapHeight = 12;
+let tiles;
 
+function load1() {
 
+	let image = new Image();
+	
+    image.addEventListener("load", function(event) {
+		tiles = this;
+
+    });
+    image.src = "GameTiles.png";
+
+};
+
+load1();
 let gameMap = new Board();
 gameMap.setMap();
 
@@ -57,25 +70,34 @@ function drawBoard() {
 	{
 		for(var x = 0; x < mapWidth; ++x)
 		{
+			let startingCutPosition = null;
+
 			if (gameMap[((y*mapWidth)+x)] == 0) {
-				context.fillStyle = "#685b48";
+				/*unplayable*/
+				startingCutPosition = 288;
 			} else if (gameMap[((y*mapWidth)+x)] == 2) {
-				context.fillStyle = "brown";
+				/*cracked*/
+				startingCutPosition = 72;
 			} else if (gameMap[((y*mapWidth)+x)] == 3) {
-				context.fillStyle = "black";;
+				/*tiny crack*/
+				startingCutPosition = 144;
+			} else if (gameMap[((y*mapWidth)+x)] == 4) {
+				/* fondo*/
+				startingCutPosition = 360;
 			} else if (gameMap[((y*mapWidth)+x)] > 9  && gameMap[((y*mapWidth)+x)] < 30) {
-				context.fillStyle = "#ffff00";
+				startingCutPosition = 144;
 				gameMap[((y*mapWidth)+x)] += 1;
 			} else if (gameMap[((y*mapWidth)+x)] >= 30 && gameMap[((y*mapWidth)+x)] < 50) {
-				context.fillStyle = "orange";
+				startingCutPosition = 216;
 				gameMap[((y*mapWidth)+x)] += 1;
 			} else if (gameMap[((y*mapWidth)+x)] == 50) {
-				context.fillStyle = "red";
+				startingCutPosition = 360;
 				gameMap[((y*mapWidth)+x)] -=47;
 			} else {
-				context.fillStyle = "#5aa457";
+				/*1 normal tile*/
+				startingCutPosition = 0;
 			}
-			
+			context.drawImage(tiles, startingCutPosition, 0, tileWidth, tileHeight, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 		}
 	}
 }
