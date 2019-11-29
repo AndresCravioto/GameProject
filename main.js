@@ -1,4 +1,4 @@
-const canvas = document.getElementById('tron');
+const canvas = document.getElementById('pigs');
 const context = canvas.getContext('2d');
 const tileWidth = 72;
 const tileHeight = 72;
@@ -76,7 +76,6 @@ function drawBoard() {
 				context.fillStyle = "#5aa457";
 			}
 			
-			context.fillRect( x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 		}
 	}
 }
