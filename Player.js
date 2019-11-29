@@ -1,6 +1,7 @@
 class Player {
-    constructor(xCoord, yCoord, color) {
+    constructor(xCoord, yCoord, color, index) {
         this.color = color || '#fff';
+        this.index = index;
         this.dead = false;
         this.hp = 2;
         this.direction = '';

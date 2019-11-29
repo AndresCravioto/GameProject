@@ -5,6 +5,8 @@ const tileHeight = 72;
 const mapWidth = 20;
 const mapHeight = 12;
 let tiles;
+let sunCleotilde = null;
+let moonCleotilde = null;
 
 function load1() {
 
@@ -18,15 +20,43 @@ function load1() {
 
 };
 
+function loadSunCleotilde() {
+
+	let image2 = new Image();
+	
+    image2.addEventListener("load", function(event) {
+		sunCleotilde = this;
+
+    });
+    image2.src = "CleotildeRojo1.png";
+
+};
+
+function loadMoonCleotilde() {
+
+	let image3 = new Image();
+	
+    image3.addEventListener("load", function(event) {
+		moonCleotilde = this;
+
+    });
+    image3.src = "CleotildeAzul1.png";
+
+};
+
+
+loadSunCleotilde();
+loadMoonCleotilde();
 load1();
+
 let gameMap = new Board();
 gameMap.setMap();
 
 
 Player.allInstances = [];
 
-let p1 = new Player(0, 1, '#75A4FF');
-let p2 = new Player(7,9, 'red');
+let p1 = new Player(0, 1, '#75A4FF', 0);
+let p2 = new Player(7,9, 'red', 1);
 
 let image = new Image();
 let array = new Array();
@@ -114,10 +144,14 @@ function drawStartingPositions(players) {
 
 function drawPlayers() {
 	Player.allInstances.forEach(function (player) {
-			context.fillStyle = player.color;
-			context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
-			context.strokeStyle = 'black';
-			context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+
+		let cleotildes = [moonCleotilde, sunCleotilde];
+			// context.fillStyle = player.color;
+			// context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+			// context.strokeStyle = 'black';
+			// context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+			context.drawImage(cleotildes[player.index], player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+			
 
 			if (gameMap[((player.yCoord*mapWidth)+player.xCoord)] == 50) {
 				player.changeHp(-1);
