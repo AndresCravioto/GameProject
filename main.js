@@ -9,11 +9,17 @@ let sunCleotilde = null;
 let moonCleotilde = null;
 let scene = 1;
 let loadingScreen = document.getElementById('loadingScreen');
+let controlsScreen = document.getElementById('controlsScreen');
 let loadingScreenSong = document.getElementById('loadingScreenTheme');
+let battleScreenSong = document.getElementById('battleScreenTheme');
 
-function homeScreen(){
+function drawLoadingScreen(){
     context.drawImage(loadingScreen,0,0,canvas.width,canvas.height);
-    //loadingScreenSong.play();
+    loadingScreenSong.play();
+}
+
+function drawControlsScreen(){
+    context.drawImage(controlsScreen,0,0,canvas.width,canvas.height);
 }
 
 function load1() {
@@ -86,7 +92,7 @@ document.addEventListener('keyup', (event) => {
 
 document.addEventListener('keydown', (event) => {
 
-	if(event.keyCode ==13){scene=2}
+	if(event.keyCode ==13){scene += 1}
 
 	p1Keys = [37,38,39,40,18];
 	p2Keys = [65,68,87,83, 69];
@@ -174,8 +180,13 @@ function drawPlayers() {
 	  
 function draw() {
 	if(scene==1){            
-        homeScreen();
-    } else {
+		drawLoadingScreen();
+		loadingScreenSong.play();
+    } else if(scene==2) {
+		drawControlsScreen();
+	} else {
+		loadingScreenSong.pause();
+		battleScreenSong.play();
 	drawBoard();
 	drawPlayers();
 	}
