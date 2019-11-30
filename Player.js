@@ -3,7 +3,7 @@ class Player {
         this.color = color || '#fff';
         this.index = index;
         this.dead = false;
-        this.hp = 2;
+        this.hp = 4;
         this.direction = '';
         this.key = '';
         this.xCoord = xCoord;
