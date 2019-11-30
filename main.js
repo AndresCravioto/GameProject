@@ -7,6 +7,14 @@ const mapHeight = 12;
 let tiles;
 let sunCleotilde = null;
 let moonCleotilde = null;
+let scene = 1;
+let loadingScreen = document.getElementById('loadingScreen');
+let loadingScreenSong = document.getElementById('loadingScreenTheme');
+
+function homeScreen(){
+    context.drawImage(loadingScreen,0,0,canvas.width,canvas.height);
+    //loadingScreenSong.play();
+}
 
 function load1() {
 
@@ -77,6 +85,8 @@ document.addEventListener('keyup', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
+
+	if(event.keyCode ==13){scene=2}
 
 	p1Keys = [37,38,39,40,18];
 	p2Keys = [65,68,87,83, 69];
@@ -163,8 +173,12 @@ function drawPlayers() {
 }
 	  
 function draw() {
+	if(scene==1){            
+        homeScreen();
+    } else {
 	drawBoard();
 	drawPlayers();
+	}
 }
 
 drawStartingPositions(Player.allInstances);
