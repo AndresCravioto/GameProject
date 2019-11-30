@@ -16,8 +16,7 @@ function load1() {
 		tiles = this;
 
     });
-    image.src = "GameTiles.png";
-
+    image.src = "PilarFlame.png";
 };
 
 function loadSunCleotilde() {
@@ -115,13 +114,13 @@ function drawBoard() {
 				/* fondo*/
 				startingCutPosition = 360;
 			} else if (gameMap[((y*mapWidth)+x)] > 9  && gameMap[((y*mapWidth)+x)] < 30) {
-				startingCutPosition = 144;
+				startingCutPosition = 432;
 				gameMap[((y*mapWidth)+x)] += 1;
 			} else if (gameMap[((y*mapWidth)+x)] >= 30 && gameMap[((y*mapWidth)+x)] < 50) {
-				startingCutPosition = 216;
+				startingCutPosition = 504;
 				gameMap[((y*mapWidth)+x)] += 1;
 			} else if (gameMap[((y*mapWidth)+x)] == 50) {
-				startingCutPosition = 360;
+				startingCutPosition = 576;
 				gameMap[((y*mapWidth)+x)] -=47;
 			} else {
 				/*1 normal tile*/
