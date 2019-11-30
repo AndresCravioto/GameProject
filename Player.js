@@ -423,109 +423,290 @@ class Player {
                         }
                     break;
                     case 'DOWN':
-                        gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord)] = 10;
-                        gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord)] = 10;
-                        gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord)] = 10;
-                        gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord)] = 10;
-                        gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord)] = 10;
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord)] = 10;
+                            }
 
                         if(this.xCoord == 0) {
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
-
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
+                            }
                         } else if (this.xCoord == 1) {
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
-
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
-
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
-                            
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            }
                         } else if (this.xCoord == mapWidth -1) {
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            }
                         } else if (this.xCoord == mapWidth -2) {
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
 
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
-
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
-
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
+                            }
                         } else {
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +6) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +7) * mapWidth) + this.xCoord -2)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord +2)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
-                            gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 0
+                            && gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] != 4) {
+                                gameMap[(((this.yCoord +5) * mapWidth) + this.xCoord -2)] = 10;
+                            }
 
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
+                            }
 
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord +1)] = 10;
-
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
-
-                            gameMap[(((this.yCoord +4) * mapWidth) + this.xCoord -1)] = 10;
-
-                            gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord -1)] = 10;
+                            }
+                            if(gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 0
+                            && gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] != 4) {
+                                gameMap[(((this.yCoord +8) * mapWidth) + this.xCoord +1)] = 10;
+                            }
                         }
                     break;
                     case 'LEFT':
@@ -702,10 +883,17 @@ class Player {
 
     move() {
         if (!this.dead) {
-            if (this.key === "LEFT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 0 && this.xCoord -1 > -1) this.xCoord -= 1;
-            if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
-            if (this.key === "RIGHT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 0 && this.xCoord +1 < mapWidth) this.xCoord += 1;
-            if (this.key === "DOWN" && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 0 && this.yCoord +1 < mapHeight) this.yCoord += 1;
+            if (this.key === "LEFT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 4
+            && gameMap[(((this.yCoord) * mapWidth) + this.xCoord -1 )] != 0 && this.xCoord -1 > -1) this.xCoord -= 1;
+
+            if (this.key === "UP" && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 4
+            && gameMap[(((this.yCoord -1) * mapWidth) + this.xCoord)] != 0 && this.yCoord -1 > -1) this.yCoord -= 1;
+
+            if (this.key === "RIGHT" && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 4
+            && gameMap[(((this.yCoord) * mapWidth) + this.xCoord +1 )] != 0 && this.xCoord +1 < mapWidth) this.xCoord += 1;
+
+            if (this.key === "DOWN" && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 4
+            && gameMap[(((this.yCoord +1) * mapWidth) + this.xCoord)] != 0 && this.yCoord +1 < mapHeight) this.yCoord += 1;
         }
         this.key = 'USED'
     }
