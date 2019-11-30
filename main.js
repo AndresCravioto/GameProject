@@ -12,6 +12,8 @@ let loadingScreen = document.getElementById('loadingScreen');
 let controlsScreen = document.getElementById('controlsScreen');
 let loadingScreenSong = document.getElementById('loadingScreenTheme');
 let battleScreenSong = document.getElementById('battleScreenTheme');
+let outcome;
+let names = ['Sun', 'Moon'];
 
 function drawLoadingScreen(){
     context.drawImage(loadingScreen,0,0,canvas.width,canvas.height);
@@ -68,8 +70,8 @@ gameMap.setMap();
 
 Player.allInstances = [];
 
-let p1 = new Player(0, 1, '#75A4FF', 0);
-let p2 = new Player(7,9, 'red', 1);
+let p1 = new Player(0, 1, 'red', 'SUN', 0);
+let p2 = new Player(7,9, 'blue', 'MOON', 1);
 
 let image = new Image();
 let array = new Array();
@@ -161,10 +163,7 @@ function drawPlayers() {
 	Player.allInstances.forEach(function (player) {
 
 		let cleotildes = [moonCleotilde, sunCleotilde];
-			// context.fillStyle = player.color;
-			// context.fillRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
-			// context.strokeStyle = 'black';
-			// context.strokeRect(player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
+
 			context.drawImage(cleotildes[player.index], player.xCoord * tileWidth, player.yCoord * tileHeight, tileWidth, tileHeight);
 			
 
@@ -191,6 +190,32 @@ function draw() {
 	drawPlayers();
 	}
 }
+
+function showVictoryScreen(color) {
+	const resultNode = document.createElement('div');
+	resultNode.id = 'result';
+	resultNode.style.color = color || '#fff';
+	resultNode.style.position = 'fixed';
+	resultNode.style.top = 0;
+	resultNode.style.display = 'grid';
+	resultNode.style.gridTemplateColumns = '1fr';
+	resultNode.style.width = '100%';
+	resultNode.style.height = '100vh';
+	resultNode.style.justifyContent = 'center';
+	resultNode.style.alignItems = 'center';
+	resultNode.style.background = '#00000088'
+  
+	const resultText = document.createElement('h1');
+	resultText.innerText = outcome;
+	resultText.style.fontFamily = 'Bungee, cursive';
+	resultText.style.textTransform = 'uppercase';
+  
+	
+	resultNode.appendChild(resultText);
+
+	document.querySelector('body').appendChild(resultNode);
+  
+  };
 
 drawStartingPositions(Player.allInstances);
 let game = setInterval(draw, 50);

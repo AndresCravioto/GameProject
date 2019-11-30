@@ -1,9 +1,10 @@
 class Player {
-    constructor(xCoord, yCoord, color, index) {
+    constructor(xCoord, yCoord, color, deity, index) {
         this.color = color || '#fff';
         this.index = index;
         this.dead = false;
-        this.hp = 4;
+        this.hp = 2;
+        this.deity = deity;
         this.direction = '';
         this.key = '';
         this.xCoord = xCoord;
@@ -921,5 +922,7 @@ class Player {
         this.xCoord = -10000;
         this.yCoord = -10000;
         Player.allInstances;
+        outcome = `${names[this.index]} Cleotilde wins! Praise the ${this.deity}!`;
+        showVictoryScreen(this.color);
     }
 };
